@@ -2,7 +2,9 @@ This work was partially support by the ``Trustworthy And Resilient Decentralised
 
 
 The function to be exposed is import as follows
+
 `from pruning import prune_model `
+
 as used as such
 
 Wrapper function for nni pruning method
