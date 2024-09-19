@@ -11,7 +11,11 @@ Wrapper function for nni pruning method
 | `exclude_layer_names`| A list of layer names to be excluded from pruning 
                         (default: `None`, will automatically detect it, could possibly cause an error)|
 | `prunner_choice`     | The choice of pruner to be used 
-                        (default: `None`, will select L1NormPrunner).       |
+                        (default: `None`, will select L1NormPrunner).                                |
+
+
+
+Returns the pruned model
 
 
 Note that when loading the model, the relative path to the model definition has to be the same as when the model was first created.
