@@ -7,7 +7,6 @@ The function to be exposed is import as follows
 
 as used as such
 
-Wrapper function for nni pruning method
 | Parameter            | Type                | Description                                                                 |
 |----------------------|---------------------|-----------------------------------------------------------------------------|
 | `model`              | `torch.nn.Module`   | The PyTorch model to be pruned.                                             |
@@ -26,6 +25,9 @@ Returns
 | `model`              | `torch.nn.Module`   | The pruned PyTorch model                                         |
 
 
+
+
+Wrapper function for nni pruning method
 
 Note that when loading the model, the relative path to the model definition has to be the same as when the model was first created.
 possible solution.
