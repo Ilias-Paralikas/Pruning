@@ -9,8 +9,8 @@ import copy
 def prune_model(model, 
                 sparse_ratio, 
                 input_shape, 
-                op_types=['Linear','Conv2d','Conv3d','BatchNorm2d'], 
-                exclude_op_names=None,
+                pruned_layer_types=['Linear','Conv2d','Conv3d','BatchNorm2d'], 
+                exclude_layer_names=None,
                 prunner_choice =  None):
   
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -26,13 +26,13 @@ def prune_model(model,
     config_list [0]['sparse_ratio'] = sparse_ratio
 
 
-    config_list[0]['op_types'] =op_types
+    config_list[0]['pruned_layer_types'] =pruned_layer_types
     last_layer_name, _ = find_last_layer_name_and_module(model)
-    if not exclude_op_names:
+    if not exclude_layer_names:
      config_list[0]['exclude_op_names'] = [last_layer_name]
      print('NOTE: the last layer of the model was not provided and was automatically detected. If any error occur it')
     else:
-        config_list[0]['exclude_op_names'] = exclude_op_names
+        config_list[0]['exclude_op_names'] = exclude_layer_names
 
     if not prunner_choice:
         prunner_choice = L1NormPruner
