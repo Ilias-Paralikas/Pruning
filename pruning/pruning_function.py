@@ -26,7 +26,7 @@ def prune_model(model,
     config_list [0]['sparse_ratio'] = sparse_ratio
 
 
-    config_list[0]['pruned_layer_types'] =pruned_layer_types
+    config_list[0]['op_types'] =pruned_layer_types
     last_layer_name, _ = find_last_layer_name_and_module(model)
     if not exclude_layer_names:
      config_list[0]['exclude_op_names'] = [last_layer_name]
